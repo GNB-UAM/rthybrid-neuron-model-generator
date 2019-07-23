@@ -54,10 +54,21 @@ def inter_burst_pts (times):
 	return inter
 
 
-
+def select_integration_method (method):
+	if method == "EULER":
+		return 0
+	elif method == "HEUN":
+		return 1
+	elif method == "RK4":
+		return 2
+	elif method == "RK65":
+		return 3
+	else:
+		print("Not valid integration method. Use EULER, HEUN, RK4 or RK65.")
+		sys.exit()
 
 model_name = sys.argv[1]
-method = int(sys.argv[2])
+method = select_integration_method(sys.argv[2])
 dt = float(sys.argv[3])
 
 
