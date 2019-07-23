@@ -89,6 +89,8 @@ output_file.close()
 
 # Reads the initial values of the variables and the parameters from the file
 for line in lines[count_lines:]:
+	if (line == "\n"):
+		continue
 	aux = line.split("=")
 	aux_left = aux[0].replace("\n", "")
 	if (aux_left[-1] == " "):

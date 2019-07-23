@@ -11,11 +11,13 @@ def simple_burst_duration (data):
 	events = []
 	flag = 0
 
+	half = int(len(v) / 2)
+
 	if np.isnan(v).any():
 		return -2
 
-	maxv = max(v)
-	minv = min(v)
+	maxv = max(v[half:])
+	minv = min(v[half:])
 	r = maxv - minv
 
 	for i in range(len(v)):
