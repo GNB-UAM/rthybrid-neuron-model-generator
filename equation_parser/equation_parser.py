@@ -168,7 +168,8 @@ def p_expression_name(t):
     if t[1] in diff_variables:
         t[0] = "vars["+label_upper+t[1].upper()+"]"
     elif t[1] in aux_variables:
-        internal_variables.append(t[1])
+        if t[1] not in internal_variables:
+            internal_variables.append(t[1])
         t[0] = t[1]
     else:
         t[0] = "params["+label_upper+t[1].upper()+"]"

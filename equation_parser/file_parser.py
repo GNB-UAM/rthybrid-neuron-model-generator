@@ -31,6 +31,7 @@ max_v = aux[2].replace("\n", "")
 
 count_lines = 1
 
+# Reads the file line by line and stores the variables (differential and normal) and the equation right parts in arrays, until it reaches the parameters initial values
 for line in lines[1:]:
 	count_lines += 1
 	if (line == "\n"):
